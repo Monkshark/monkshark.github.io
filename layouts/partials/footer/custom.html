@@ -1,0 +1,62 @@
+<script>
+(function() {
+    // JS가 동작할 때만 애니메이션 활성화
+    document.body.classList.add('anim-ready');
+
+    var observer = new IntersectionObserver(
+        function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -30px 0px' }
+    );
+
+    function initAnimations() {
+        // 카드 목록 순차 등장
+        var articles = document.querySelectorAll('.article-list article');
+        for (var i = 0; i < articles.length; i++) {
+            articles[i].style.transitionDelay = (i * 0.1) + 's';
+            observer.observe(articles[i]);
+        }
+
+        // 사이드바 위젯 순차 등장
+        var widgets = document.querySelectorAll('.sidebar .widget');
+        for (var j = 0; j < widgets.length; j++) {
+            widgets[j].style.transitionDelay = (0.3 + j * 0.12) + 's';
+            observer.observe(widgets[j]);
+        }
+
+        // TOC 위젯
+        var tocs = document.querySelectorAll('.widget--toc');
+        for (var k = 0; k < tocs.length; k++) observer.observe(tocs[k]);
+
+        // 글 본문 헤딩
+        var headings = document.querySelectorAll('.article-content h2, .article-content h3');
+        for (var m = 0; m < headings.length; m++) {
+            headings[m].style.transitionDelay = (m * 0.05) + 's';
+            observer.observe(headings[m]);
+        }
+
+        // 코드 블록
+        var highlights = document.querySelectorAll('.article-content .highlight');
+        for (var n = 0; n < highlights.length; n++) {
+            highlights[n].style.transitionDelay = (n * 0.08) + 's';
+            observer.observe(highlights[n]);
+        }
+
+        // 범용
+        var scrollEls = document.querySelectorAll('.animate-on-scroll');
+        for (var p = 0; p < scrollEls.length; p++) observer.observe(scrollEls[p]);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAnimations);
+    } else {
+        initAnimations();
+    }
+})();
+</script>

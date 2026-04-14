@@ -1,0 +1,114 @@
+baseURL: https://monkshark.github.io/
+languageCode: ko
+defaultContentLanguage: ko
+title: monkshark.dev
+theme: hugo-theme-stack
+
+pagination:
+  pagerSize: 10
+
+languages:
+  ko:
+    languageName: 한국어
+    weight: 1
+
+permalinks:
+  post: /p/:slug/
+  page: /:slug/
+
+params:
+  mainSections:
+    - post
+  rssFullContent: true
+
+  footer:
+    since: 2026
+    customText: ""
+
+  dateFormat:
+    published: "2006-01-02"
+    lastUpdated: "2006-01-02"
+
+  sidebar:
+    compact: false
+    subtitle: "풀스택 개발자가 되고싶은 사람"
+    avatar: ""
+
+  article:
+    headingAnchor: true
+    math: false
+    toc: true
+    readingTime: true
+    list:
+      showTags: true
+    license:
+      enabled: false
+
+  colorScheme:
+    toggle: true
+    default: auto
+
+  imageProcessing:
+    autoOrient: false
+    content:
+      widths: [800, 1600, 2400]
+      enabled: true
+    thumbnail:
+      enabled: true
+
+  widgets:
+    homepage:
+      - type: search
+      - type: archives
+        params:
+          limit: 5
+      - type: categories
+        params:
+          limit: 10
+      - type: tag-cloud
+        params:
+          limit: 20
+    page:
+      - type: toc
+
+  comments:
+    enabled: false
+
+  opengraph:
+    twitter:
+      site: ""
+      card: summary_large_image
+
+menu:
+  main:
+    - identifier: home
+      name: 홈
+      url: /
+      weight: -100
+      params:
+        icon: home
+        newTab: false
+  social: []
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  tableOfContents:
+    endLevel: 4
+    ordered: true
+    startLevel: 2
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNoStart: 1
+    lineNos: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+enableRobotsTXT: true

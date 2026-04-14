@@ -1,7 +1,7 @@
 ---
 title: "#3 - 급식 알림의 삽질기"
 description: "FCM → 로컬 알림 → Kotlin 네이티브 → 다시 Flutter. 1년간의 알림 구현 여정"
-date: 2026-04-14
+date: 2026-04-07
 slug: meal-notification
 image:
 categories:

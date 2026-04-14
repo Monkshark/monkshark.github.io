@@ -241,6 +241,29 @@ body.anim-ready .animate-on-scroll.is-visible {
     z-index: 2;
 }
 
+/* --- 관련 글: 가로 스크롤 → grid 줄바꿈 --- */
+.subsection-list {
+    overflow-x: visible;
+}
+
+.subsection-list .article-list--tile {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    article {
+        width: 100%;
+        flex-shrink: unset;
+    }
+}
+
+@media (max-width: 640px) {
+    .subsection-list .article-list--tile {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 /* --- reduce-motion 존중 --- */
 @media (prefers-reduced-motion: reduce) {
     *,

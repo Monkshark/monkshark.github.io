@@ -1,7 +1,7 @@
 ---
 title: "#2 - Java에서 Flutter로"
 description: "159커밋의 Java 프로토타입 → 부스에서 받은 피드백 → 크로스플랫폼의 필요성 → 기숙사에서 2주간 시간표 로직 개발"
-date: 2026-04-14
+date: 2026-04-06
 slug: java-to-flutter
 image:
 categories:

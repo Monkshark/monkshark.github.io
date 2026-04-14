@@ -1,7 +1,7 @@
 ---
 title: "Hugo + Stack 테마로 블로그 만들기"
 description: "Hugo 설치부터 Stack 테마 커스터마이징, 스크롤 애니메이션, GitHub Pages 배포까지"
-date: 2026-04-14
+date: 2026-04-04
 slug: hugo-stack-blog-setup
 categories:
     - TIL

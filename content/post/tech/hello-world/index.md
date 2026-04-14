@@ -1,7 +1,7 @@
 ---
 title: "블로그를 시작합니다"
 description: "Hugo + Stack 테마 + GitHub Pages로 기술 블로그를 만든 이유와 과정"
-date: 2026-04-14
+date: 2026-04-04
 slug: hello-world
 image:
 categories:

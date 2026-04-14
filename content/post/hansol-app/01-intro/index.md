@@ -1,7 +1,7 @@
 ---
 title: "#1 - 프로젝트를 시작한 이유"
 description: "고등학교 재학 중 직접 느낀 불편함을 해결하기 위해 Flutter + Firebase로 학교 앱을 만들기 시작했다"
-date: 2026-04-14
+date: 2026-04-05
 slug: hansol-app-intro
 image:
 categories:

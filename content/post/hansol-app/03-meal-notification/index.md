@@ -11,7 +11,7 @@ tags:
     - 알림
     - Kotlin
     - flutter_local_notifications
-draft: true
+draft: false
 ---
 
 ## 단순해 보였던 기능

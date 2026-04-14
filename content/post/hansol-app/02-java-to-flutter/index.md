@@ -12,7 +12,7 @@ tags:
     - NEIS API
     - 시간표
     - 크로스플랫폼
-draft: true
+draft: false
 ---
 
 ## 학교 사업 프로그램

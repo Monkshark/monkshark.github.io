@@ -224,6 +224,23 @@ body.anim-ready .animate-on-scroll.is-visible {
     }
 }
 
+/* --- 카드 전체 클릭 --- */
+.article-list article {
+    position: relative;
+}
+
+.article-list article .article-details .article-title a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.article-list article .article-details .article-tags {
+    position: relative;
+    z-index: 2;
+}
+
 /* --- reduce-motion 존중 --- */
 @media (prefers-reduced-motion: reduce) {
     *,

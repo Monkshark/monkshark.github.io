@@ -75,7 +75,7 @@ Restored (lost from git reset --hard):
 
 ## 복구: 6시간
 
-같은 날 오전 11:44에 직전 작업을 커밋하고, 12:26에 복구 커밋을 찍었다.
+같은 날 오전 6시 반에 복구 작업을 시작해서, 12:26에 복구 커밋을 찍었다.
 
 ```
 18 files changed, 1,432 insertions(+), 314 deletions(-)

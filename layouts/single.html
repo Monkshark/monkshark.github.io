@@ -1,0 +1,62 @@
+{{ define "body-class" }}
+    article-page
+    {{- $HasWidgetNotTOC := false -}}
+    {{- $TOCWidgetEnabled := false -}}
+    {{- range .Site.Params.widgets.page -}}
+        {{- if ne .type "toc" -}}
+            {{ $HasWidgetNotTOC = true -}}
+        {{- else -}}
+            {{ $TOCWidgetEnabled = true -}}
+        {{- end -}}
+    {{- end -}}
+
+    {{- $TOCManuallyDisabled := eq .Params.toc false -}}
+    {{- $TOCEnabled := and (not $TOCManuallyDisabled) $TOCWidgetEnabled -}}
+    {{- $hasTOC := ge (len .TableOfContents) 100 -}}
+    {{- .Scratch.Set "TOCEnabled" (and $TOCEnabled $hasTOC) -}}
+
+    {{- .Scratch.Set "hasWidget" (or $HasWidgetNotTOC (and $TOCEnabled $hasTOC)) -}}
+{{ end }}
+
+{{ define "main" }}
+    {{ partial "article/article.html" . }}
+
+    {{ if .Params.links }}
+        {{ partial "article/components/links" . }}
+    {{ end }}
+
+    <!-- 이전글 / 다음글 -->
+    {{ $prev := .PrevInSection }}
+    {{ $next := .NextInSection }}
+    {{ if or $prev $next }}
+    <nav class="article-nav" style="display:flex; gap:16px; margin:32px auto; max-width:var(--article-max-width, 800px); padding:0 var(--card-padding, 20px);">
+        {{ if $next }}
+        <a href="{{ $next.Permalink }}" style="flex:1; min-width:0; display:flex; flex-direction:column; padding:24px; border-radius:14px; background:var(--card-background); box-shadow:0 1px 3px rgba(0,0,0,0.08); text-decoration:none; transition:box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 16px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(0,0,0,0.08)'">
+            <span style="font-size:13px; color:var(--card-text-color-secondary);">← 이전 글</span>
+            <span style="font-size:17px; font-weight:600; color:var(--card-text-color-main); margin-top:8px; line-height:1.4;">{{ $next.Title }}</span>
+        </a>
+        {{ end }}
+        {{ if $prev }}
+        <a href="{{ $prev.Permalink }}" style="flex:1; min-width:0; display:flex; flex-direction:column; {{ if not $next }}align-items:flex-end;{{ else }}align-items:flex-end;{{ end }} padding:24px; border-radius:14px; background:var(--card-background); box-shadow:0 1px 3px rgba(0,0,0,0.08); text-decoration:none; transition:box-shadow 0.2s, transform 0.2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 6px 16px rgba(0,0,0,0.12)'" onmouseout="this.style.transform='';this.style.boxShadow='0 1px 3px rgba(0,0,0,0.08)'">
+            <span style="font-size:13px; color:var(--card-text-color-secondary);">다음 글 →</span>
+            <span style="font-size:17px; font-weight:600; color:var(--card-text-color-main); margin-top:8px; line-height:1.4; text-align:right;">{{ $prev.Title }}</span>
+        </a>
+        {{ end }}
+    </nav>
+    {{ end }}
+
+    {{ partial "article/components/related-content" . }}
+
+    {{ if not (eq .Params.comments false) }}
+        {{ partial "comments/include" . }}
+    {{ end }}
+
+    {{ partialCached "footer/footer" . }}
+
+    {{ partialCached "article/components/photoswipe" . }}
+    {{ partial "article/components/mermaid" . }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ if .Scratch.Get "hasWidget" }}{{ partial "sidebar/right.html" (dict "Context" . "Scope" "page") }}{{ end}}
+{{ end }}

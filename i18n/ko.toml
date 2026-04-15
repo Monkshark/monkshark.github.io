@@ -1,0 +1,4 @@
+[article]
+    [article.readingTime]
+        one   = "{{ .Count }}분"
+        other = "{{ .Count }}분"

@@ -11,6 +11,7 @@ tags:
     - 알림
     - Kotlin
     - flutter_local_notifications
+    - 삽질
 draft: false
 ---
 

@@ -72,7 +72,22 @@ params:
       - type: toc
 
   comments:
-    enabled: false
+    enabled: true
+    provider: giscus
+    giscus:
+      repo: monkshark/monkshark.github.io
+      repoID: R_kgDOSCbC_Q
+      category: General
+      categoryID: DIC_kwDOSCbC_c4C63yE
+      mapping: pathname
+      strict: 0
+      reactionsEnabled: 1
+      emitMetadata: 0
+      inputPosition: top
+      lightTheme: light
+      darkTheme: dark_dimmed
+      lang: ko
+      loading: lazy
 
   opengraph:
     twitter:

@@ -87,6 +87,9 @@
         swup.hooks.on('content:replace', function(visit) {
             syncContainerClass(visit);
             initAnimations();
+            if (window.Stack && typeof window.Stack.init === 'function') {
+                window.Stack.init();
+            }
         });
     }
 

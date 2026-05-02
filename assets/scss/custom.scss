@@ -8,9 +8,29 @@
     line-height: 1.6;
 }
 
-/* --- 페이지 레벨 가로 스크롤바 숨김 --- */
+/* --- 페이지 레벨 가로 스크롤바 숨김 (clip은 sticky를 깨지 않음) --- */
 html, body {
-    overflow-x: hidden;
+    overflow-x: clip;
+}
+
+/* --- 우측 사이드바: 길어지면 내부에서만 스크롤 --- */
+.right-sidebar.sticky {
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.right-sidebar.sticky::-webkit-scrollbar {
+    width: 6px;
+}
+
+.right-sidebar.sticky::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+[data-scheme="dark"] .right-sidebar.sticky::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* --- 카드 목록: 순차 등장 (stagger) --- */

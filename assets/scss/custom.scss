@@ -8,24 +8,16 @@ html, body {
     overflow-x: clip;
 }
 
-/* --- 우측 사이드바: 길어지면 내부에서만 스크롤 --- */
+/* --- 우측 사이드바: 길어지면 내부에서만 스크롤, 스크롤바는 숨김 --- */
 .right-sidebar.sticky {
     max-height: 100vh;
     overflow-y: auto;
-    scrollbar-width: thin;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .right-sidebar.sticky::-webkit-scrollbar {
-    width: 6px;
-}
-
-.right-sidebar.sticky::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-}
-
-[data-scheme="dark"] .right-sidebar.sticky::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.2);
+    display: none;
 }
 
 /* --- 카드 목록: 순차 등장 (stagger) --- */

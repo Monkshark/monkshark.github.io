@@ -1,6 +1,6 @@
 ---
 title: "Stream.toList()와 collect(toList())는 같지 않다"
-description: "Java 16+ Stream.toList()는 immutable, 기존 Collectors.toList()는 mutable. 무심코 갈아끼우면 UnsupportedOperationException."
+description: "Java 16+ Stream.toList()는 immutable, Collectors.toList()는 mutable — 무심코 갈아끼우면 UnsupportedOperationException"
 date: 2026-05-02
 slug: stream-tolist-vs-collect
 image:

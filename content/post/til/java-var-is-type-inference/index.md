@@ -1,6 +1,6 @@
 ---
 title: "Java의 var는 dynamic typing이 아니다"
-description: "Java 10+ var는 컴파일 타임 타입 추론. JS의 var나 Python 변수와는 동작이 완전히 다르다."
+description: "Java 10+ var는 컴파일 타임 타입 추론 — JS의 var나 Python 변수와는 동작이 완전히 다르다"
 date: 2026-05-02
 slug: java-var-is-type-inference
 image:

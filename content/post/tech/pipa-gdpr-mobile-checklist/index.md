@@ -1,6 +1,6 @@
 ---
 title: "PIPA·GDPR이 모바일 앱에 요구하는 것 — 개발자 체크리스트"
-description: "동의·보관 기간·삭제 요청·미성년자·제3자 제공·처리방침·책임자. 한국 PIPA와 EU GDPR이 공통으로 묻는 7가지를 Flutter + Firebase 환경에서의 구현 포인트와 함께 정리한다."
+description: "동의 → 보관 기간 → 삭제 요청 → 미성년자 → 제3자 제공 → 처리방침 → 책임자. 한국 PIPA와 EU GDPR이 공통으로 묻는 7가지를 Flutter + Firebase로 정리"
 date: 2026-05-02
 slug: pipa-gdpr-mobile-checklist
 image:

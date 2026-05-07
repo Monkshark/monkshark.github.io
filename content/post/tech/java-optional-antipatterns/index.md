@@ -1,6 +1,6 @@
 ---
 title: "Java Optional 안티패턴 5가지"
-description: "Optional은 null의 만능 대체물이 아니다. 필드·매개변수·orElse 함정 등 실전에서 자주 보이는 다섯 가지 오용을 정리한다."
+description: "필드·매개변수·orElse·get()·isPresent — 실전에서 자주 보이는 Optional 오용 다섯 가지"
 date: 2026-05-02
 slug: java-optional-antipatterns
 image:
